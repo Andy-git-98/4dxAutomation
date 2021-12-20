@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pomLogin.LoginActions;
 import systemTesting.InitDriver;
 
-public class MCIHappyPath extends InitDriver {
+public class AddMemberHappyPath extends InitDriver {
     private LoginActions loginActions;
     private MCIActions mciActions;
     private AddMemberActions addMemberActions;
@@ -35,20 +35,8 @@ public class MCIHappyPath extends InitDriver {
         }
     }
 
-    @Test(groups={"HappyPath"})
-    public void newMCI(){
-        mciActions.openMCIScreen();
-        mciActions.fillVerb("Test");
-        mciActions.fillWhat("systems");
-        //mciActions.selectLeaderMCI(2);
-        mciActions.fillMCIName("QA automation");
-        mciActions.fillX1("0");
-        mciActions.fillY1("10");
-        mciActions.fillExpectedGoal("10");
-        mciActions.fillAcceptedGoal("8");
-        mciActions.fillFailedGoal("6");
-        mciActions.selectYear("2021");
-        mciActions.fillDesc("We want to test more systems");
-        mciActions.saveMCI();
+    @Test(groups = "HappyPath")
+    public void Addmember(){
+        //
     }
 }
