@@ -2,6 +2,7 @@ package pomLeadMeasure;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -56,7 +57,7 @@ public class LeadMeasureActions extends LeadMeasureElements{
     }
 
     public void fillMeasureName(String text){
-        wait.until(ExpectedConditions.visibilityOf(inputDisplayName1)).click();
+        wait.until(ExpectedConditions.visibilityOf(inputDisplayName1)).sendKeys(text);
     }
 
     public void chooseSelectDataType(String type){
@@ -78,10 +79,14 @@ public class LeadMeasureActions extends LeadMeasureElements{
     }
 
     public void fillDescription(String text){
+        Actions action = new Actions(driver);
+        action.moveToElement(inputDescription).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputDescription)).sendKeys(text);
     }
 
     public void clickSave(){
+        Actions action = new Actions(driver);
+        action.moveToElement(buttonSave).build().perform();
         wait.until(ExpectedConditions.visibilityOf(buttonSave)).click();
     }
 }

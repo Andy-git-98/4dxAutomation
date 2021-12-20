@@ -43,7 +43,7 @@ public class LeadMeasureElements {
     @FindBy(id = "inputDescription")
     protected WebElement inputDescription;
 
-    @FindBy(id = "/html/body/div[1]/div/div[2]/div[1]/div/div/div[2]/div/div/div[2]/form/div[3]/button")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div/div/div[2]/div/div/div[2]/form/div[3]/button")
     protected WebElement buttonSave;
 
 }
