@@ -1,13 +1,12 @@
-package pomMCIs;
+package pomAddMember;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.Keys;
 
-public class AddMemberActions extends AddMemberElements{
+public class AddMemberActions extends AddMemberElements {
     private WebDriver driver;
     private WebDriverWait wait;
 

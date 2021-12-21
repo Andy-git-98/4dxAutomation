@@ -1,10 +1,12 @@
-package pomMCIs;
+package pomAddMember;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import pomAddMember.AddMemberActions;
 import pomLogin.LoginActions;
+import pomMCIs.MCIActions;
 import systemTesting.InitDriver;
 
 public class AddMemberHappyPath extends InitDriver {
