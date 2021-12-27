@@ -1,14 +1,14 @@
-package pomMCIs;
+package testCasesMCI;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pomAddMember.AddMemberActions;
 import pomLogin.LoginActions;
+import pomMCIs.MCIActions;
 import systemTesting.InitDriver;
 
-public class MCIHappyPath extends InitDriver {
+public class DescendingMCI extends InitDriver {
     private LoginActions loginActions;
     private MCIActions mciActions;
 
@@ -41,13 +41,13 @@ public class MCIHappyPath extends InitDriver {
         mciActions.fillWhat("systems");
         //mciActions.selectLeaderMCI(2);
         mciActions.fillMCIName("QA automation");
-        mciActions.fillX1("0");
-        mciActions.fillY1("10");
-        mciActions.fillExpectedGoal("10");
-        mciActions.fillAcceptedGoal("8");
+        mciActions.fillX1("10");
+        mciActions.fillY1("0");
+        mciActions.fillExpectedGoal("0");
+        mciActions.fillAcceptedGoal("4");
         mciActions.fillFailedGoal("6");
         mciActions.selectYear("2021");
-        mciActions.fillDesc("We want to test more systems");
+        mciActions.fillDesc("We want to test less systems");
         mciActions.saveMCI();
     }
 }

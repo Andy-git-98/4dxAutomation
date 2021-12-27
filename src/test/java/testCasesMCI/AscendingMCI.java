@@ -1,14 +1,14 @@
-package pomMCIs;
+package testCasesMCI;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pomAddMember.AddMemberActions;
 import pomLogin.LoginActions;
+import pomMCIs.MCIActions;
 import systemTesting.InitDriver;
 
-public class MCIHappyPath extends InitDriver {
+public class AscendingMCI extends InitDriver {
     private LoginActions loginActions;
     private MCIActions mciActions;
 
