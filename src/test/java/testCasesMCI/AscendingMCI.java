@@ -21,7 +21,7 @@ public class AscendingMCI extends InitDriver {
         driver.get(url);
     }
 
-    @Test(groups={"HappyPath"})
+    @Test(groups={"TestCasesMCI"})
     public void loginUser(){
         loginActions.clickLoginButton();
         loginActions.fillMail("mario.cc@alliedglobal.com");
@@ -34,7 +34,7 @@ public class AscendingMCI extends InitDriver {
         }
     }
 
-    @Test(groups={"HappyPath"})
+    @Test(groups={"TestCasesMCI"})
     public void newMCI(){
         mciActions.openMCIScreen();
         mciActions.fillVerb("Test");

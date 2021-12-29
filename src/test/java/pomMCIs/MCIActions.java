@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class MCIActions extends MCIElements {
     private WebDriver driver;
     private WebDriverWait wait;
+    private Actions action;
 
     public MCIActions(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
+        action = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -43,46 +45,63 @@ public class MCIActions extends MCIElements {
     }
 
     public void fillMCIName(String text) {
+        action.moveToElement(inputMCIName).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputMCIName)).sendKeys(text);
     }
 
     public void fillX1(String text) {
+        action.moveToElement(inputX1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputX1)).sendKeys(text);
     }
 
     public void fillY1(String text) {
+        action.moveToElement(inputY1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputY1)).sendKeys(text);
     }
 
     public void fillExpectedGoal(String text) {
+        action.moveToElement(inputExpectedGoal).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputExpectedGoal)).sendKeys(text);
     }
 
     public void fillAcceptedGoal(String text) {
+        action.moveToElement(inputAcceptedGoal).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputAcceptedGoal)).sendKeys(text);
     }
 
     public void fillFailedGoal(String text) {
+        action.moveToElement(inputFailedGoal).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputFailedGoal)).sendKeys(text);
     }
 
     public void selectDataTypeNumber() {
+        action.moveToElement(selectDataType).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectDataType)).click();
         wait.until(ExpectedConditions.visibilityOf(number)).click();
     }
 
     public void selectYear(String year){
+        action.moveToElement(selectYear).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectYear)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(text(),'"+year+"')]"))).click();
     }
 
     public void fillDesc(String text){
+        action.moveToElement(inputDescription).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputDescription)).sendKeys(text);
     }
 
     public void saveMCI(){
-        Actions action = new Actions(driver);
         action.moveToElement(buttonSave).build().perform();
         wait.until(ExpectedConditions.elementToBeClickable(buttonSave)).click();
     }
+
+    public void findErrorMessage(String text){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'The field "+text+" is required')]")));
+    }
+
+    //public void deleteMCIName() {
+       // wait.until(ExpectedConditions.visibilityOf(inputMCIName)).clear();
+    //}
+
 }
