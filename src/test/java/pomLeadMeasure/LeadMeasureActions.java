@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LeadMeasureActions extends LeadMeasureElements{
     private WebDriver driver;
     private WebDriverWait wait;
+    private Actions action;
 
     public LeadMeasureActions(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
+        action = new Actions(driver);
         PageFactory.initElements(driver, this);
     }
 
@@ -35,57 +37,65 @@ public class LeadMeasureActions extends LeadMeasureElements{
     }
 
     public void fillVerb(String text){
+        action.moveToElement(inputVerb).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputVerb)).sendKeys(text);
     }
 
     public void fillMeasureGoal(String text){
+        action.moveToElement(inputFocus).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputFocus)).sendKeys(text);
     }
 
     public void chooseFrequency(String frequency){
+        action.moveToElement(selectConsistency).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectConsistency)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(text(),'"+frequency+"')]"))).click();
     }
 
     public void fillQualitativeStandard(String text){
+        action.moveToElement(inputQuality).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputQuality)).sendKeys(text);
     }
 
     public void chooseSelectAxisAmount(String amount){
+        action.moveToElement(selectAxisNumber).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectAxisNumber)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(text(),'"+amount+"')]"))).click();
     }
 
     public void fillMeasureName(String text){
+        action.moveToElement(inputDisplayName1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputDisplayName1)).sendKeys(text);
     }
 
     public void chooseSelectDataType(String type){
+        action.moveToElement(selectDataTypeId1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectDataTypeId1)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(text(),'"+type+"')]"))).click();
     }
 
     public void chooseSelectDirection(String direction){
+        action.moveToElement(selectDirection).build().perform();
         wait.until(ExpectedConditions.visibilityOf(selectDirection)).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//li[contains(text(),'"+direction+"')]"))).click();
     }
 
     public void fillExpectedGoal(String text){
+        action.moveToElement(inputY1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputY1)).sendKeys(text);
     }
 
     public void fillAcceptableGoal(String text){
+        action.moveToElement(inputX1).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputX1)).sendKeys(text);
     }
 
     public void fillDescription(String text){
-        Actions action = new Actions(driver);
         action.moveToElement(inputDescription).build().perform();
         wait.until(ExpectedConditions.visibilityOf(inputDescription)).sendKeys(text);
     }
 
     public void clickSave(){
-        Actions action = new Actions(driver);
         action.moveToElement(buttonSave).build().perform();
         wait.until(ExpectedConditions.visibilityOf(buttonSave)).click();
     }
