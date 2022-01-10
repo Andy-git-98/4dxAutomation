@@ -59,7 +59,7 @@ public class InitDriver {
                 }
             }
 
-            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(25));
             return driver;
         } catch (Exception var5) {
             var5.printStackTrace();

@@ -99,4 +99,8 @@ public class LeadMeasureActions extends LeadMeasureElements{
         action.moveToElement(buttonSave).build().perform();
         wait.until(ExpectedConditions.visibilityOf(buttonSave)).click();
     }
+
+    public void redirectToHomePage(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div/div[1]/div[2]/div/div/div[2]/div[2]/ul/li[1]/a/div"))).click();
+    }
 }

@@ -60,14 +60,16 @@ public class MaxLeadMeasureAmount extends InitDriver {
             leadMeasureActions.clickSave();
             Thread.sleep(5000);
             String currentURL=loginActions.getCurrentPageUrl();
-            if(!currentURL.contains("/admin/dashboard") && count == 4){
-                //isLopping = false;
-                count = 1;
-                wigNumber += 1;
-            }
-            if(!currentURL.contains("/admin/dashboard") && genCount == 10){
+            if(!currentURL.contains("/admin/dashboard") && genCount == 12){
                 isLopping = false;
             }
+            if(!currentURL.contains("/admin/dashboard") && count == 4){
+                //isLopping = false;
+                count = 0;
+                wigNumber += 1;
+                driver.navigate().to("http://web-app-lb-2066069832.us-east-2.elb.amazonaws.com/admin/dashboard");
+            }
+
             count += 1;
             genCount += 1;
         }
