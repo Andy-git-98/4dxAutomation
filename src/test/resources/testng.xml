@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="4dx-Test Suite">
+    <test name="TestCases 4dx">
+        <groups>
+            <run>
+                <include name="postMethod"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="Rergression.MaxMCIsAmount"/>
+            <class name="Rergression.MaxLeadMeasureAmount"/>
+        </classes>
+    </test>
+
+    <listeners>
+    </listeners>
+</suite>

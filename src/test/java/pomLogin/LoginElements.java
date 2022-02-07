@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginElements {
-    @FindBy(className = "MuiButton-text")
+    @FindBy(xpath = "//span[contains(text(),'Log In')]")
     protected WebElement logInButton;
 
     @FindBy(id = "1-email")
