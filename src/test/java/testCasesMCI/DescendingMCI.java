@@ -46,7 +46,7 @@ public class DescendingMCI extends InitDriver {
         mciActions.fillExpectedGoal("0");
         mciActions.fillAcceptedGoal("4");
         mciActions.fillFailedGoal("6");
-        mciActions.selectYear("2021");
+        mciActions.selectYear("2022");
         mciActions.fillDesc("We want to test less systems");
         mciActions.saveMCI();
     }

@@ -46,7 +46,7 @@ public class MCIHappyPath extends InitDriver {
         mciActions.fillExpectedGoal("10");
         mciActions.fillAcceptedGoal("8");
         mciActions.fillFailedGoal("6");
-        mciActions.selectYear("2021");
+        mciActions.selectYear("2022");
         mciActions.fillDesc("We want to test more systems");
         mciActions.saveMCI();
     }
