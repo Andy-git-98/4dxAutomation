@@ -18,6 +18,7 @@ public class LoginActions extends LoginElements{
     public void clickLoginButton(){
         wait.until(ExpectedConditions.visibilityOf(logInButton)).click();
     }
+
     public void fillMail(String text){
         wait.until(ExpectedConditions.visibilityOf(email)).sendKeys(text);
     }

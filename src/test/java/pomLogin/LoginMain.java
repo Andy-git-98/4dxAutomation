@@ -23,9 +23,10 @@ public class LoginMain extends InitDriver {
         loginActions.fillMail("mario.cc@alliedglobal.com");
         loginActions.fillPassword("Abc123**");
         loginActions.sendLoginInfo();
+
+        wait.until(ExpectedConditions.urlContains("index"));
         String currentURL=loginActions.getCurrentPageUrl();
-        wait.until(ExpectedConditions.urlContains("web-app-lb-2066069832.us-east-2.elb.amazonaws.com"));
-        if(!currentURL.contains("web-app-lb-2066069832.us-east-2.elb.amazonaws.com")){
+        if(!currentURL.contains("index")){
             Assert.fail("Incorrect credentials");
         }
     }
